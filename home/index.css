@@ -1,0 +1,35 @@
+.Home{
+    background-color: rgb(155, 255, 155);
+}
+.homee{
+    background-color: rgb(101, 109, 109);
+    color: rgb(164, 233, 253);
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 0px;
+    margin: 0PX;
+
+    /* margin-top: 5px; */
+}
+
+.btn{
+    background-color: rgb(157, 215, 253);
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 10px 10px 10px 10px;
+    width: 150px;
+
+}
+h1{
+    
+     margin-top: 20px; 
+}
+.inp{
+    
+    border-radius: 10px;
+    margin-top: 5px;
+    justify-content: center;
+    text-align: center;
+    height: 20px;
+}

@@ -1,0 +1,81 @@
+.card {
+    position: relative; /* Ensure the card is positioned relative for pseudo-elements */
+    padding: 20px;
+    border-radius: 30px;
+    background-color: black; /* Inner background */
+    color: rgb(6, 7, 7);
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 20px auto; /* Center the card on larger screens */
+    z-index: 0; /* Ensure content is on top of the glow */
+    max-width: 500px; /* Add max width to control card size */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    background: linear-gradient(
+        60deg,
+        #00ffd5,
+        #4df8a5,
+        #054d6c,
+        white
+    );
+    background-size: 500%;
+    filter: blur(8px);
+    z-index: -1;
+    border-radius: 30px;
+    animation: glowing 20s linear infinite;
+    opacity: 1;
+}
+
+@keyframes glowing {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.weatherCard {
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.cardd {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 1px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .card {
+        width: 90%; /* Make the card take up most of the screen width */
+        margin: 15px auto; /* Reduce margin on mobile */
+        padding: 15px;
+        border-radius: 20px; /* Adjust border radius for smaller screens */
+    }
+
+    .card::before {
+        filter: blur(6px); /* Slightly reduce glow intensity on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%; /* Full width on very small screens */
+        padding: 10px;
+        margin: 10px auto; /* Adjust margin for mobile view */
+        border-radius: 15px;
+    }
+
+    .card::before {
+        filter: blur(5px); /* Further reduce glow for very small screens */
+    }
+}
